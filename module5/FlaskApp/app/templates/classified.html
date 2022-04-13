@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Prediction</title>
+    </head>
+    <body>
+        <table>
+        {% for class in classes %}
+            <tr>
+                <td> {% if class == label %} <b>{{ class }}</b> {% else %} {{ class }} {% endif %} </td>
+                <td> {{ probabilities[loop.index0] }} </td>
+            </tr>
+        {% endfor %}
+        </table>
+
+        <div> <img src="{{ image }}" style="max-width: 400px;" alt="vehicle"> </div>
+    </body>
+</html>

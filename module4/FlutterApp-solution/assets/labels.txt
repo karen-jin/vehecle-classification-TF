@@ -1,0 +1,6 @@
+Motorcycle
+Car
+Pickup Truck
+Bus
+Truck
+Tractor Trailer

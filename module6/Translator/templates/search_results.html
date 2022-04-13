@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Translator</title>
+        <style>
+            .row {
+                display: flex;
+            }
+            .card {
+                padding: 10px;
+                width: 33.33%;
+            }
+            h2 {
+                text-align: center;
+            }
+            p {
+                font-size: 18pt;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="row">
+            <div class="card"> 
+                <h2>Image</h2>
+                <div> <img src="{{ original }}" style="width: 100%;" alt="original image"> </div>
+            </div>
+            
+            <div class="card"> 
+                <h2>Text Detected</h2>
+                <p>{{ text }}</p>
+            </div>
+            
+            <div class="card"> 
+                <h2>Translation from {{ language }}</h2>
+                <p>{{ translation }}</p>
+            </div>
+        </div>
+    </body>
+</html>

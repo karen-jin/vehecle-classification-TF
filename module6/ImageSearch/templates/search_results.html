@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Search Results</title>
+        <style>
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 5px;
+            }
+            .grid-item {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Original Image</h2>
+        <div> <img src="{{ original }}" style="max-width: 400px;" alt="original image"> </div>
+
+        <h2>Best Guess</h2>
+        {{ best_guess_label }}
+
+        <h2>Web Entities Found</h2>
+        <table>
+            <tr><th>Description</th><th>Score</th></tr>
+            {% for ent in web_entities %}
+            <tr>
+                <td>{{ ent.description }}</td>
+                <td>{{ ent.score }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Visually Similar Images Found</h2>
+        <div class="grid-container">
+            {% for url in image_urls %}
+            <div class="grid-item"><img src="{{ url }}" style="width: 100%;" alt="similar image"></div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
